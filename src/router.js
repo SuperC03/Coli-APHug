@@ -1,23 +1,33 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Home from './views/Home.vue'
+import Vue from "vue";
+import Router from "vue-router";
+import Home from "./views/Home.vue";
+import Religions from "./views/Religions.vue";
+import Credits from "./views/Credits.vue";
+import Religion from "./views/Religion.vue";
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: Home
-    },
-    {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
-    }
-  ]
-})
+	routes: [
+		{
+			path: "/",
+			name: "home",
+			component: Home
+		},
+		{
+			path: "/religions",
+			name: "religions",
+			component: Religions
+		},
+		{
+			path: "/credits",
+			name: "credits",
+			component: Credits
+		},
+		{
+			path: "/religion/:id",
+			name: "religion",
+			component: Religion
+		}
+	]
+});
