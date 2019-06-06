@@ -42,11 +42,11 @@ export default {
 	background-image: linear-gradient(black, hsl(204, 86%, 53%), black);
 }
 ::selection {
-	background: hsl(204, 86%, 53%);
-	color: black; /* WebKit/Blink Browsers */
+	background: rgba(0, 0, 0, 0);
+	color: hsl(204, 86%, 53%); /* WebKit/Blink Browsers */
 }
 ::-moz-selection {
-	background: hsl(204, 86%, 53%);
-	color: black; /* Gecko Browsers */
+	background: rgba(255, 255, 255, 0);
+	color: hsl(204, 86%, 53%); /* Gecko Browsers */
 }
 </style>

@@ -1,10 +1,6 @@
 <template>
-	<footer class="footer" @click="citations">
-		<div class="content has-text-centered footer-content">
-			Coli - APHug was created with
-			<span class="heart">❤</span> by Colin Clark.
-			<br>Click Here for the Image Citations
-		</div>
+	<footer class="footer">
+		<div class="content has-text-centered footer-content">Coli - APHug was created by Colin Clark.</div>
 	</footer>
 </template>
 <script>

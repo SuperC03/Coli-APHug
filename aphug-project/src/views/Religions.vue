@@ -15,13 +15,13 @@ import religions from "../religions.js";
 import groupInputs from "../services/groupInputs.js";
 import ReligionCard from "../components/ReligionCard.vue";
 
-console.log(religions[0]);
+console.log(religions);
 
 export default {
 	name: "Religions",
 	data: function() {
 		return {
-			religions: groupInputs(religions, 3)
+			religions: religions
 		};
 	},
 	components: {
@@ -34,13 +34,13 @@ export default {
 	margin: 0px;
 	padding: 0px;
 	width: 100vw;
-}
-.columns {
-	margin: 0px;
-	padding: 5%;
 	background-image: url("https://static1.squarespace.com/static/5813cddb8419c25c3b42eacd/5813e156414fb51499dfe55c/5860e4d99de4bb91b6add275/1537833555900/?format=1000w");
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
+}
+.columns {
+	margin: 0px;
+	padding: 5%;
 }
 </style>

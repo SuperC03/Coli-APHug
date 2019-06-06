@@ -6,8 +6,12 @@
 					<img v-bind:src="religion.mainImage" v-bind:alt="religion.name">
 					<br>
 					<h1 class="title is-size-1">{{religion.name}}</h1>
-					<p>{{religion.description}}</p>
+					<br>
 					<table class="table is-bordered is-hoverable">
+						<tr>
+							<td>Follower Name</td>
+							<td>{{religion.followers}}</td>
+						</tr>
 						<tr>
 							<td>Followers:</td>
 							<td>{{religion.followerCount}}</td>
@@ -16,7 +20,30 @@
 							<td>God{{religion.gods.length > 1 ? "s" : ""}}:</td>
 							<td>{{religion.gods.join(", ")}}</td>
 						</tr>
+						<tr>
+							<td>Deity Belief Type:</td>
+							<td>{{religion.deityBelief}}</td>
+						</tr>
+						<tr>
+							<td>Spread Type:</td>
+							<td>{{religion.spreadType}}</td>
+						</tr>
+						<tr>
+							<td>Birthplace:</td>
+							<td>{{religion.birthplace}}</td>
+						</tr>
+						<tr>
+							<td>Founder:</td>
+							<td>{{religion.founder}}</td>
+						</tr>
+						<tr>
+							<td>Major Branches:</td>
+							<td>{{religion.subdivisions.join(", ")}}</td>
+						</tr>
 					</table>
+					<div class="container description">
+						<p>{{religion.description}}</p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -31,17 +58,17 @@ export default {
 	data: function() {
 		return {
 			religion: {},
-			backgroundImage: ""
+			religionKeys: {
+				Christianity: religions[0][0],
+				Islam: religions[0][1],
+				Buddhism: religions[0][2],
+				Hinduism: religions[1][0],
+				Judaism: religions[1][1]
+			}
 		};
 	},
 	mounted: function() {
-		this.religion = religions.find(e => {
-			return e.name == this.$route.params.name;
-		});
-		this.backgroundImage = {
-			"background-image": this.religion.mainImage
-		};
-		console.log(this.backgroundImage);
+		this.religion = this.religionKeys[this.$route.params.name];
 	}
 };
 </script>
@@ -64,5 +91,8 @@ export default {
 }
 .container table tr td {
 	text-align: center;
+}
+.description {
+	padding: 5%;
 }
 </style>
